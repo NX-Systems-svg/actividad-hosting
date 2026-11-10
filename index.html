@@ -1,0 +1,136 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Actividad 1 · Hosting | Emilio Garduño</title>
+<meta name="description" content="Actividad de clase 1: página web publicada en un dominio gratuito con GitHub Pages.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,800&family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+
+<header class="hero">
+  <p class="kicker">Actividad de clase 1 — Hosting</p>
+  <h1 class="url" aria-label="Dirección de esta página">
+    <span class="part sub" data-part="sub">nx-systems-svg</span><span class="dot">.</span><span class="part host" data-part="host">github</span><span class="dot">.</span><span class="part tld" data-part="tld">io</span>
+  </h1>
+  <ol class="legend" aria-label="Partes del dominio">
+    <li class="l-sub"><b>Subdominio gratuito</b> Lo asigna GitHub a partir de mi usuario. No se paga ni se registra.</li>
+    <li class="l-host"><b>Proveedor de hosting</b> GitHub Pages guarda los archivos y los sirve por HTTPS.</li>
+    <li class="l-tld"><b>Dominio de nivel superior</b> <span>.io</span>, propiedad del proveedor, no mía.</li>
+  </ol>
+  <p class="lead">Esta página es la entrega: un sitio estático (HTML y CSS) publicado en internet sin pagar servidor ni dominio. Abajo explico qué es el hosting, qué opciones gratuitas existen y cómo llegó tu navegador hasta aquí.</p>
+</header>
+
+<main>
+
+<section class="block" id="trace" aria-labelledby="t-trace">
+  <h2 id="t-trace">Lo que acaba de pasar para que vieras esto</h2>
+  <p>Tu navegador midió cada paso de la carga. Estos números son reales y cambian en cada visita.</p>
+  <ol class="trace">
+    <li><span class="step">Buscar la IP del dominio (DNS)</span><span class="ms" id="m-dns">—</span></li>
+    <li><span class="step">Abrir conexión con el servidor (TCP)</span><span class="ms" id="m-tcp">—</span></li>
+    <li><span class="step">Cifrar la conexión (TLS / HTTPS)</span><span class="ms" id="m-tls">—</span></li>
+    <li><span class="step">Esperar la primera respuesta del servidor</span><span class="ms" id="m-ttfb">—</span></li>
+    <li><span class="step">Descargar el HTML</span><span class="ms" id="m-dl">—</span></li>
+    <li class="total"><span class="step">Página lista para mostrarse</span><span class="ms" id="m-total">—</span></li>
+  </ol>
+  <p class="note" id="trace-note">Protocolo usado: <span id="m-proto">—</span>. Si un paso marca 0 ms es porque el navegador reutilizó una conexión o tenía el dato en caché.</p>
+</section>
+
+<section class="block" aria-labelledby="t-que">
+  <h2 id="t-que">¿Qué es el hosting?</h2>
+  <p>El <strong>hosting</strong> (alojamiento web) es el servicio de guardar los archivos de un sitio en una computadora que está encendida y conectada a internet todo el tiempo: el servidor. Cuando alguien escribe la dirección, el servidor le envía esos archivos.</p>
+  <p>El <strong>dominio</strong> es el nombre que la gente escribe para llegar a ese servidor. Son dos cosas distintas: se puede tener hosting sin dominio propio (como aquí, usando un subdominio del proveedor) o un dominio propio apuntando a cualquier hosting.</p>
+</section>
+
+<section class="block" aria-labelledby="t-tipos">
+  <h2 id="t-tipos">Tipos de hosting</h2>
+  <div class="table-wrap">
+  <table>
+    <thead><tr><th scope="col">Tipo</th><th scope="col">Cómo funciona</th><th scope="col">Ideal para</th></tr></thead>
+    <tbody>
+      <tr><th scope="row">Estático</th><td>Solo entrega archivos HTML, CSS, JS e imágenes, sin base de datos.</td><td>Portafolios, páginas de clase, documentación</td></tr>
+      <tr><th scope="row">Compartido</th><td>Muchos sitios comparten el mismo servidor y sus recursos.</td><td>Blogs y sitios pequeños con PHP / WordPress</td></tr>
+      <tr><th scope="row">VPS</th><td>Una máquina virtual con recursos reservados y acceso de administrador.</td><td>Apps con backend propio</td></tr>
+      <tr><th scope="row">Dedicado</th><td>Un servidor físico completo para un solo cliente.</td><td>Tráfico alto, requisitos de seguridad estrictos</td></tr>
+      <tr><th scope="row">Nube</th><td>Recursos que crecen o bajan según la demanda; se paga por uso.</td><td>Apps que escalan (AWS, Azure, Google Cloud)</td></tr>
+    </tbody>
+  </table>
+  </div>
+</section>
+
+<section class="block" aria-labelledby="t-gratis">
+  <h2 id="t-gratis">Opciones gratuitas con dominio incluido</h2>
+  <div class="table-wrap">
+  <table>
+    <thead><tr><th scope="col">Servicio</th><th scope="col">Dominio gratuito</th><th scope="col">Cómo se publica</th></tr></thead>
+    <tbody>
+      <tr class="mine"><th scope="row">GitHub Pages <small>(usado aquí)</small></th><td><code>usuario.github.io</code></td><td>Subiendo el código a un repositorio público</td></tr>
+      <tr><th scope="row">Vercel</th><td><code>proyecto.vercel.app</code></td><td>Conectando un repositorio o con la CLI</td></tr>
+      <tr><th scope="row">Netlify</th><td><code>sitio.netlify.app</code></td><td>Repositorio o arrastrando una carpeta</td></tr>
+      <tr><th scope="row">Cloudflare Pages</th><td><code>proyecto.pages.dev</code></td><td>Repositorio o subida directa</td></tr>
+      <tr><th scope="row">InfinityFree</th><td><code>sitio.infinityfreeapp.com</code></td><td>FTP o administrador de archivos; admite PHP y MySQL</td></tr>
+    </tbody>
+  </table>
+  </div>
+</section>
+
+<section class="block" aria-labelledby="t-pasos">
+  <h2 id="t-pasos">Cómo publiqué esta página</h2>
+  <ol class="steps">
+    <li><b>Escribí el sitio.</b> Dos archivos: <code>index.html</code> y <code>estilos.css</code>.</li>
+    <li><b>Creé un repositorio público</b> en GitHub llamado <code>actividad-hosting</code> y subí los archivos con <code>git push</code>.</li>
+    <li><b>Activé GitHub Pages</b> en <em>Settings → Pages</em>, eligiendo la rama <code>main</code> y la carpeta raíz.</li>
+    <li><b>Esperé el despliegue.</b> GitHub construye el sitio en un par de minutos y le asigna el subdominio con HTTPS automático.</li>
+    <li><b>Comprobé la dirección final</b> abriéndola desde otro dispositivo.</li>
+  </ol>
+  <p class="final-url">Dirección pública: <a href="https://nx-systems-svg.github.io/actividad-hosting/">https://nx-systems-svg.github.io/actividad-hosting/</a></p>
+</section>
+
+</main>
+
+<footer>
+  <p><b>Emilio Garduño</b></p>
+  <p>Profesor: Daniel Urbiola Velazquez</p>
+  <p>Noviembre de 2026</p>
+</footer>
+
+<script>
+(function () {
+  // Partes del dominio: usa el hostname real si está publicado
+  var h = location.hostname;
+  if (h && h.split('.').length >= 3) {
+    var p = h.split('.');
+    var tld = p.pop(), host = p.pop(), sub = p.join('.');
+    document.querySelector('[data-part="sub"]').textContent = sub;
+    document.querySelector('[data-part="host"]').textContent = host;
+    document.querySelector('[data-part="tld"]').textContent = tld;
+    document.querySelector('.l-tld span').textContent = '.' + tld;
+  }
+
+  function fmt(v) { return (v > 0 ? Math.round(v) : 0) + ' ms'; }
+
+  function fill() {
+    var n = performance.getEntriesByType && performance.getEntriesByType('navigation')[0];
+    if (!n) { document.getElementById('trace-note').textContent = 'Tu navegador no expone los tiempos de carga.'; return; }
+    var tls = n.secureConnectionStart > 0 ? n.connectEnd - n.secureConnectionStart : 0;
+    var tcp = (n.connectEnd - n.connectStart) - tls;
+    document.getElementById('m-dns').textContent = fmt(n.domainLookupEnd - n.domainLookupStart);
+    document.getElementById('m-tcp').textContent = fmt(tcp);
+    document.getElementById('m-tls').textContent = fmt(tls);
+    document.getElementById('m-ttfb').textContent = fmt(n.responseStart - n.requestStart);
+    document.getElementById('m-dl').textContent = fmt(n.responseEnd - n.responseStart);
+    document.getElementById('m-total').textContent = fmt(n.domContentLoadedEventEnd || n.responseEnd);
+    document.getElementById('m-proto').textContent = n.nextHopProtocol ? n.nextHopProtocol.toUpperCase() : 'no disponible';
+    document.getElementById('trace').classList.add('ready');
+  }
+  if (document.readyState === 'complete') setTimeout(fill, 0);
+  else window.addEventListener('load', function () { setTimeout(fill, 0); });
+})();
+</script>
+</body>
+</html>
